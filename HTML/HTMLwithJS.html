@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="Calculator app" content="Máy tính cơ bản">
+    <meta name="author" content="Nicolas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="CaculatorStyle.css">
+</head>
+
+<body>
+    <script>
+        var x = '';
+
+        function getId(id) {
+            return document.getElementById(id)
+        }
+
+        function setNumber(num) {
+            var result = getId('Result')
+            x += num;
+            result.value = x;
+        }
+
+        function clearData() {
+            var result = getId('Result')
+            result.value = null;
+            x = '';
+        }
+
+        function calCulate() {
+            var result = getId('Result');
+            result.value = eval(result.value);
+        }
+    </script>
+    <table>
+        <tr>
+            <td colspan="5"><input type="text" id="Result"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="7" onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="8" onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="9" onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="/" onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="<--" onclick="Result.value=Result.value.substr(0,Result.value.length-1)"></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="4" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="5" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="6" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="*" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="C" onclick=clearData()></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="1" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="2" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="3" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="+" onclick=setNumber(this.value)></td>
+            <td><input class="btn" type="button" value="=" onclick=calCulate()></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="0" onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="." onclick="setNumber(this.value)"></td>
+            <td><input class="btn" type="button" value="-" onclick="setNumber(this.value)"></td>
+        </tr>
+    </table>
+</body>
+<footer>
+
+</footer>
